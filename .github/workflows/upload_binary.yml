@@ -15,20 +15,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2019, ubuntu-20.04, macos-latest]
+        os: [ubuntu-18.04]
         include:
-          - os: windows-2019
-            pathsep: ";"
-            asset_name: black_windows.exe
-            executable_mime: "application/vnd.microsoft.portable-executable"
-          - os: ubuntu-20.04
+          - os: ubuntu-18.04
             pathsep: ":"
-            asset_name: black_linux
+            asset_name: black_linux_u18
             executable_mime: "application/x-executable"
-          - os: macos-latest
-            pathsep: ":"
-            asset_name: black_macos
-            executable_mime: "application/x-mach-binary"
 
     steps:
       - uses: actions/checkout@v3
